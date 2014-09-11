@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<connection-list>
+	
+	<connection name="ryd" type="jdbc">
+        <param name="driver" value="com.mysql.jdbc.Driver" />
+        <param name="url" value="jdbc:mysql://localhost:3306/ryd" />
+        <param name="user" value="ryd" />
+        <param name="pwd" value="1234" />
+    </connection>
+
+</connection-list>

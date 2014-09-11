@@ -1,0 +1,115 @@
+.bodystyle{
+font: normal 10px Verdana;
+color: black;
+}
+
+.error{
+font: bold 10px Verdana;
+color: red;
+}
+.urbangreymenu{
+position:absolute;
+left:5px;
+top:80px;
+width: 150px; /*width of menu*/
+}
+
+.urbangreymenu .headerbar{
+font: bold 13px Verdana;
+color: white;
+background: #606060 url("../imagenes/downgreen.gif") no-repeat 8px 6px; /*last 2 values are the x and y coordinates of bullet image*/
+margin-bottom: 0; /*bottom spacing between header and rest of content*/
+text-transform: uppercase;
+padding: 7px 0 7px 31px; /*31px is left indentation of header text*/
+}
+
+.urbangreymenu ul{
+list-style-type: none;
+margin: 0;
+padding: 0;
+margin-bottom: 0; /*bottom spacing between each UL and rest of content*/
+}
+
+.urbangreymenu ul li{
+padding-bottom: 2px; /*bottom spacing between menu items*/
+}
+
+.urbangreymenu ul li a{
+font: normal 12px Arial;
+color: black;
+background: #E9E9E9;
+display: block;
+padding: 5px 0;
+line-height: 17px;
+padding-left: 8px; /*link text is indented 8px*/
+text-decoration: none;
+}
+
+.urbangreymenu ul li a:visited{
+color: black;
+}
+
+.urbangreymenu ul li a:hover{ /*hover state CSS*/
+color: white;
+background: black;
+}
+
+.header{
+height: 80px;
+font: bold 16px Verdana;
+color:white;
+background: #606060;
+padding: 5px 0;
+padding-left: 8px;
+}
+
+.headercell{
+font: bold 14px Verdana;
+color:white;
+}
+
+.footer{
+height: 50px;
+font: normal 10px Verdana;
+color:white;
+background: #606060;
+padding: 5px 0;
+padding-left: 8px;
+padding-right:5px;
+}
+
+.feedbackform{
+padding: 5px;
+}
+
+.formstyled{ /* label elements that should be styled (left column within fieldwrapper DIV) */
+float: right;
+width: 200px; /*width of label (left column)*/
+text-transform: uppercase;
+border-bottom: 1px solid green;
+margin-right: 15px; /*spacing with right column*/
+}
+
+.formbutton{
+cursor:pointer;
+border:outset 1px #ccc;
+background:#999;
+color:#666;
+font-weight:bold;
+padding: 1px 2px;
+background:url("../imagenes/formbg.gif") repeat-x left top;
+}
+
+.tdProducto{
+font: normal 9px Verdana;
+float: right;
+width: 70px; /*width of label (left column)*/
+text-transform: uppercase;
+border-bottom: 1px solid green;
+margin-right: 10px; /*spacing with right column*/
+}
+
+.monto{
+font: bold 11px Verdana;
+}
+

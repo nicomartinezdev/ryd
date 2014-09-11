@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+ 
+<tiles-definitions>
+ 
+  <definition name="baseLayout" template="/WEB-INF/tiles/layout.jsp" preparer="com.ryd.preparer.LayoutPreparer">
+      <put-attribute name="title"  value="layout.title"/>
+      <put-attribute name="pgTitle"  value="layout.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="layout.pgSubTitle"/>
+      <put-attribute name="confirmValue"  value="layout.confirm"/>
+      <put-attribute name="header" value="/WEB-INF/tiles/header.jsp"/>
+      <put-attribute name="menu"   value="/WEB-INF/tiles/menu.jsp"/>
+      <put-attribute name="body"   value="/WEB-INF/tiles/body.jsp"/>
+      <put-attribute name="footer" value="/WEB-INF/tiles/footer.jsp"/>
+  </definition>
+ 
+  <definition name="clienteListado" extends="baseLayout">
+      <put-attribute name="title"  value="clienteListado.title"/>
+      <put-attribute name="pgTitle"  value="clienteListado.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="clienteListado.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/cliente/clienteListado.jsp"/>   
+  </definition>
+  
+  <definition name="clienteEdicion" extends="baseLayout">
+      <put-attribute name="title"  value="clienteEdicion.title"/>
+      <put-attribute name="pgTitle"  value="clienteEdicion.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="clienteEdicion.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/cliente/clienteEdicion.jsp"/>   
+  </definition>
+
+   <definition name="clientePopUp" extends="baseLayout">
+      <put-attribute name="title"  value="clienteListado.title"/>
+      <put-attribute name="pgTitle"  value="clienteListado.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="clienteListado.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/cliente/clientePopUp.jsp"/>
+      <put-attribute name="menu"  value=""/>   
+  </definition>
+  
+   <definition name="clienteView" extends="baseLayout">
+      <put-attribute name="title"  value="clienteView.title"/>
+      <put-attribute name="pgTitle"  value="clienteView.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="clienteView.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/cliente/clienteView.jsp"/>
+      <put-attribute name="menu"  value=""/>   
+  </definition>
+  
+   <definition name="remitoListado" extends="baseLayout">
+      <put-attribute name="title"  value="remitoListado.title"/>
+      <put-attribute name="pgTitle"  value="remitoListado.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="remitoListado.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/remito/remitoListado.jsp"/>   
+  </definition>
+  
+  <definition name="remitoEdicion" extends="baseLayout">
+      <put-attribute name="title"  value="remitoEdicion.title"/>
+      <put-attribute name="pgTitle"  value="remitoEdicion.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="remitoEdicion.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/remito/remitoEdicion.jsp"/>   
+  </definition>
+  
+  <definition name="remitoView" extends="baseLayout">
+      <put-attribute name="title"  value="remitoView.title"/>
+      <put-attribute name="pgTitle"  value="remitoView.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="remitoView.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/remito/remitoView.jsp"/>
+      <put-attribute name="menu"  value=""/>   
+  </definition>
+  
+  <definition name="movimientoListado" extends="baseLayout">
+      <put-attribute name="title"  value="movimientoListado.title"/>
+      <put-attribute name="pgTitle"  value="movimientoListado.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="movimientoListado.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/movimiento/movimientoListado.jsp"/>   
+  </definition>
+  
+  <definition name="movimientoEdicion" extends="baseLayout">
+      <put-attribute name="title"  value="movimientoEdicion.title"/>
+      <put-attribute name="pgTitle"  value="movimientoEdicion.pgTitle"/>
+      <put-attribute name="pgSubTitle"  value="movimientoEdicion.pgSubTitle"/>
+      <put-attribute name="body"   value="/WEB-INF/movimiento/movimientoEdicion.jsp"/>   
+  </definition>
+  
+</tiles-definitions>

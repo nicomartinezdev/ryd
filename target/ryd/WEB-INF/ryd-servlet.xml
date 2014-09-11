@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+   
+   <import resource="applicationContext.xml"/>
+   <import resource="applicationContext-dao.xml"/>
+   <import resource="applicationContext-dao-datasource.xml"/>
+      
+    <bean id="clienteListado" class="com.ryd.controller.ClienteController">
+        <property name="clienteService" ref="clienteService"></property>
+    </bean>
+    
+    <bean id="clienteEdicion" class="com.ryd.controller.ClienteEdicionController">
+        <property name="clienteService" ref="clienteService"></property>
+        <property name="validator" ref="clienteFormValidator"/>
+    </bean>
+   
+    <bean id="remitoListado" class="com.ryd.controller.RemitoController">
+        <property name="remitoService" ref="remitoService"></property>
+    </bean>
+    
+    <bean id="remitoEdicion" class="com.ryd.controller.RemitoEdicionController">
+        <property name="remitoService" ref="remitoService"></property>
+        <property name="productoService" ref="productoService"></property>
+        <property name="validator" ref="remitoFormValidator"/>
+    </bean>
+    
+    <bean id="remitoView" class="com.ryd.controller.RemitoViewController">
+        <property name="remitoService" ref="remitoService"></property>
+        <property name="productoService" ref="productoService"></property>
+    </bean>
+    
+    <bean id="movimientoListado" class="com.ryd.controller.MovimientoController">
+        <property name="movimientoService" ref="movimientoService"></property>
+    </bean>
+    
+    <bean id="movimientoEdicion" class="com.ryd.controller.MovimientoEdicionController">
+        <property name="movimientoService" ref="movimientoService"></property>
+        <property name="validator" ref="movimientoFormValidator"/>
+    </bean>
+    
+    <bean id="movimientoDelete" class="com.ryd.controller.MovimientoDeleteController">
+        <property name="movimientoService" ref="movimientoService"></property>
+    </bean>
+    
+    <bean id="clienteView" class="com.ryd.controller.ClienteViewController">
+        <property name="clienteService" ref="clienteService"></property>
+    </bean>
+    
+        
+    <!--
+    <bean id="exportStructureFilter" class="com.msd.controller.ExportStructureFilterController">
+        <property name="countryService" ref="countryService"></property>
+        <property name="territoryService" ref="territoryService"></property>
+        <property name="hierarchyService" ref="hierarchyService"></property>
+        <property name="levelService" ref="levelService"></property>
+        <property name="filename" value="exportStructure.xls"></property>
+    </bean>
+ -->
+    <bean id="clienteFormValidator" class="com.ryd.validator.ClienteFormValidator">
+        <property name="clienteService" ref="clienteService"></property>
+    </bean>
+    
+    <bean id="remitoFormValidator" class="com.ryd.validator.RemitoFormValidator">
+    </bean>
+    
+    <bean id="movimientoFormValidator" class="com.ryd.validator.MovimientoFormValidator">
+    </bean>
+    
+    <!-- Mapping request URL to controller bean -->
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="urlMap">
+            <map>
+                <entry key="clienteListado.htm">
+                    <ref bean="clienteListado"/>
+                </entry>
+                <entry key="clienteEdicion.htm">
+                    <ref bean="clienteEdicion"/>
+                </entry>
+                <entry key="clienteView.htm">
+                    <ref bean="clienteView"/>
+                </entry>
+                <entry key="remitoListado.htm">
+                    <ref bean="remitoListado"/>
+                </entry>
+                <entry key="remitoEdicion.htm">
+                    <ref bean="remitoEdicion"/>
+                </entry>
+                <entry key="remitoView.htm">
+                    <ref bean="remitoView"/>
+                </entry>
+                <entry key="movimientoListado.htm">
+                    <ref bean="movimientoListado"/>
+                </entry>
+                <entry key="movimientoEdicion.htm">
+                    <ref bean="movimientoEdicion"/>
+                </entry>
+                <entry key="movimientoDelete.htm">
+                    <ref bean="movimientoDelete"/>
+                </entry>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="tilesViewResolver"
+    class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles2.TilesView" />
+        <property name="order" value="0"/>
+    </bean>
+   
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles2.TilesConfigurer" p:definitions="/WEB-INF/tiles.xml" />
+
+    <bean id="excelViewResolver" class="org.springframework.web.servlet.view.XmlViewResolver">
+        <property name="order" value="1" />
+    </bean>   
+
+    <bean id="localeResolver"
+        class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="es" />
+    </bean>
+ 
+    <bean id="localeChangeInterceptor"
+        class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+        <property name="paramName" value="lang" />
+    </bean>
+ 
+    <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping" >
+        <property name="interceptors">
+           <list>
+            <ref bean="localeChangeInterceptor" />
+           </list>
+        </property>
+    </bean>
+ 
+    <bean id="messageSource"
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages" />
+    </bean>
+
+</beans>
